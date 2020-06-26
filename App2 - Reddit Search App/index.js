@@ -19,7 +19,7 @@ searchForm.addEventListener('submit', e => {
     }
 
     // Clear input
-    searchInput.value = '';
+    // searchInput.value = '';
 
     // Search Reddit
     reddit.search(searchTerm, searchLimit, sortBy)
