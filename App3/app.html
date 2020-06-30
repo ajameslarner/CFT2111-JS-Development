@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Application</title>
+	<link rel="stylesheet" href="css/style.css">
+	<script src="js/control.js"></script>
+</head>
+
+<body>
+	<div class="bg-img"><img id="bg-id" src="images/bg1.jpg" alt=""></div>
+	<nav>
+		<ul class="nav-main"> 
+			<li><a href="app.html">Application</a></li>
+		</ul>
+	</nav>
+	<header>
+		<h1>Application</h1>
+	</header>
+	<section>
+		<div class="main-content">
+			<h2>Welcome to your personal phone contract application.</h2>
+			<p>Use this application to find the best mobile phone contract most suited to your unique needs.</p>
+			<p>The form below will give you all the necessary fields to search for the perfect phone contract tailored to your specifications.</p>
+			<br>
+
+			<!--///search form start\\\-->
+			<form action="#" class="search-form" id="appform" onsubmit="return false">
+				<!--///brand user input start\\\-->
+				Brand Type:<br><select name="brand" class="select-drop" id="brand" required>
+					<option value="">Select your option</option>
+					<option value="apple">Apple</option>
+					<option value="samsung">Samsung</option>
+					<option value="motorola">Motorola</option>
+					<option value="google">Google</option>
+					<option value="sony">Sony</option>
+					<option value="huawei">Huawei</option>
+				</select>
+				<br>
+				<!--///minutes user input start\\\-->
+				Package Minutes Allowance:<br><select class="select-drop" name="minutes" id="minutes" required>
+					<option value="">Select your option</option>
+					<option value="100">100</option>
+					<option value="200">200</option>
+					<option value="300">300</option>
+					<option value="400">400</option>
+					<option value="500">500</option>
+					<option value="600">600</option>
+					<option value="700">700</option>
+					<option value="800">800</option>
+					<option value="900">900</option>
+					<option value="unlimited">Unlimited</option>
+				</select>
+				<br>
+				<!--///texts user input start\\\-->
+				Package Texts Allowance:<br><select class="select-drop" name="texts" id="text" required>
+					<option value="">Select your option</option>
+					<option value="100">100</option>
+					<option value="200">200</option>
+					<option value="300">300</option>
+					<option value="400">400</option>
+					<option value="500">500</option>
+					<option value="600">600</option>
+					<option value="700">700</option>
+					<option value="800">800</option>
+					<option value="900">900</option>
+					<option value="unlimited">Unlimited</option>
+				</select>
+				<br>
+				<!--///cost user input start\\\-->
+				Monthly Cost Allowance: £ <input type="text" class="rangevalue" id="valuecostmin" value="" required><br> <input type="range" class="rangeinput" name="rangecostmin" min="1" max="95" value="1" onchange="updaterangecostmin(this.value);" required>
+				<!--///this script updates the valuecostmin input according to the slider value.\\\-->
+				<script>
+					function updaterangecostmin(res) {
+						document.getElementById('valuecostmin').value = res;
+					}
+				</script>
+				<br>
+				<!--///data user input start\\\-->
+				Monthly Data Allowance: GB <input type="text" class="rangevalue" id="valuedatamin" value="" required><br> <input type="range" class="rangeinput" name="rangedatamin" min="0" max="95" value="0" step="5" onchange="updaterangedatamin(this.value);" required>
+				<!--///this script updates the valuecostmin input according to the slider value.\\\-->
+				<script>
+					function updaterangedatamin(res) {
+						document.getElementById('valuedatamin').value = res;
+					}
+				</script>
+				<br>
+				<input type="submit" id="submit" class="submit-btn" onclick="search()"> <input type="submit" value=Clear id="submit" class="submit-btn" onclick="location.reload();">
+			</form>
+			<!--\\\search form end///-->
+		</div>
+		
+		<div id="contracts" class="main-content">
+			<h1>Matching Contracts</h1>
+
+		</div>>
+	</section>
+	<footer></footer>
+
+</body>
+
+</html>
